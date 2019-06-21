@@ -32,12 +32,16 @@ namespace Accounts
 
         public static Money operator+ (Money amount1, Money amount2)
         {
-            return new Money (amount1.value + amount2.value, amount1.currency);
+            var value1 = ToRMB(amount1.value, amount1.currency);
+            var value2 = ToRMB(amount2.value, amount2.currency);
+            return new Money (value1 + value2,Currency.RMB);
         }
 
         public static Money operator- (Money amount1, Money amount2)
         {
-            return new Money(amount1.value - amount2.value, amount1.currency);
+            var value1 = ToRMB(amount1.value, amount1.currency);
+            var value2 = ToRMB(amount2.value, amount2.currency);
+            return new Money(value1 - value2, Currency.RMB);
         }
 
         public static double ToRMB(double value, Currency currency)

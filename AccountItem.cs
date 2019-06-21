@@ -18,5 +18,7 @@ namespace Accounts
         public string Note;
         public Money Amount;
         public DateTime OccuredTime;
+
+        public AccountItem(string name, Category category, string Content, string Note, Money money, DateTime occuredTime)
     }
 }
